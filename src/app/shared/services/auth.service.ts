@@ -24,7 +24,7 @@ export class AuthService {
       response_type: "code",
       post_logout_redirect_uri: `${Constants.clientRoot}/signout-callback-oidc`,
       metadata: {
-        issuer:  `https://localhost:44339`,
+        issuer:  Constants.issuer,
         jwks_uri: `${Constants.idpAuthority}/.well-known/openid-configuration/jwks`,
         end_session_endpoint: `${Constants.idpAuthority}/connect/endsession`,
         authorization_endpoint: `${Constants.idpAuthority}/connect/authorize`,

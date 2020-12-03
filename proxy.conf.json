@@ -1,6 +1,6 @@
 {
     "/identityServer/*": {
-      "target": "https://localhost:44339",
+      "target": "https://intid4linux.tra.go.tz",
       "secure": false,
       "pathRewrite": {
         "^/identityServer": ""

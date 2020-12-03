@@ -20,9 +20,18 @@ export class AuthService {
       client_id: Constants.clientId,
       client_secret: Constants.clientSecret,
       redirect_uri: `${Constants.clientRoot}/signin-oidc`,
-      scope: "openid profile api1 email",
+      scope: "openid profile",
       response_type: "code",
-      post_logout_redirect_uri: `${Constants.clientRoot}/signout-callback-oidc`
+      post_logout_redirect_uri: `${Constants.clientRoot}/signout-callback-oidc`,
+      metadata: {
+        issuer:  `https://localhost:44339`,
+        jwks_uri: `${Constants.idpAuthority}/.well-known/openid-configuration/jwks`,
+        end_session_endpoint: `${Constants.idpAuthority}/connect/endsession`,
+        authorization_endpoint: `${Constants.idpAuthority}/connect/authorize`,
+        token_endpoint: `${Constants.idpAuthority}/connect/token`,
+        userinfo_endpoint: `${Constants.idpAuthority}/connect/userinfo`
+      }
+
     }
   }
 
